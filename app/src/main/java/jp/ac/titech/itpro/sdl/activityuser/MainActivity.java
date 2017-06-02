@@ -1,6 +1,7 @@
 package jp.ac.titech.itpro.sdl.activityuser;
 
 import android.content.Intent;
+import android.net.Uri;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.view.View;
@@ -35,9 +36,10 @@ public class MainActivity extends AppCompatActivity {
                 request = getString(R.string.request_3_text);
                 break;
         }
-        Intent intent = new Intent();
-        intent.setClassName("jp.ac.titech.itpro.sdl.activityprovider",
-                "jp.ac.titech.itpro.sdl.activityprovider.PublicActivity");
+        Intent intent = new Intent("public_activity");
+        //intent.setClassName("jp.ac.titech.itpro.sdl.activityprovider",
+        //        "jp.ac.titech.itpro.sdl.activityprovider.PublicActivity");
+        intent.setType("text/plain");
         intent.putExtra("request", request);
         startActivityForResult(intent, MYREQCODE);
     }
